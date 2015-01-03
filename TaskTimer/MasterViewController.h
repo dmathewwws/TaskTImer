@@ -11,5 +11,8 @@
 @interface MasterViewController : UITableViewController
 
 
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
+
 @end
 

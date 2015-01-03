@@ -15,6 +15,9 @@
 		9FB72DB41A5402CF00484A25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB72DB31A5402CF00484A25 /* Images.xcassets */; };
 		9FB72DB71A5402CF00484A25 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB72DB51A5402CF00484A25 /* LaunchScreen.xib */; };
 		9FB72DC31A5402CF00484A25 /* TaskTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB72DC21A5402CF00484A25 /* TaskTimerTests.m */; };
+		9FB72DCE1A561BEE00484A25 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB72DCD1A561BEE00484A25 /* Task.m */; };
+		9FB72DD11A5628B900484A25 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB72DD01A5628B900484A25 /* AddTaskViewController.m */; };
+		9FB72E091A57FACE00484A25 /* StopwatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB72E081A57FACE00484A25 /* StopwatchTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,12 @@
 		9FB72DBC1A5402CF00484A25 /* TaskTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB72DC11A5402CF00484A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FB72DC21A5402CF00484A25 /* TaskTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskTimerTests.m; sourceTree = "<group>"; };
+		9FB72DCC1A561BEE00484A25 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		9FB72DCD1A561BEE00484A25 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		9FB72DCF1A5628B900484A25 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		9FB72DD01A5628B900484A25 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		9FB72E071A57FACE00484A25 /* StopwatchTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchTimer.h; sourceTree = "<group>"; };
+		9FB72E081A57FACE00484A25 /* StopwatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +97,18 @@
 				9FB72DA81A5402CF00484A25 /* AppDelegate.m */,
 				9FB72DAA1A5402CF00484A25 /* MasterViewController.h */,
 				9FB72DAB1A5402CF00484A25 /* MasterViewController.m */,
+				9FB72DCC1A561BEE00484A25 /* Task.h */,
+				9FB72DCD1A561BEE00484A25 /* Task.m */,
 				9FB72DAD1A5402CF00484A25 /* DetailViewController.h */,
 				9FB72DAE1A5402CF00484A25 /* DetailViewController.m */,
+				9FB72E071A57FACE00484A25 /* StopwatchTimer.h */,
+				9FB72E081A57FACE00484A25 /* StopwatchTimer.m */,
 				9FB72DB01A5402CF00484A25 /* Main.storyboard */,
 				9FB72DB31A5402CF00484A25 /* Images.xcassets */,
 				9FB72DB51A5402CF00484A25 /* LaunchScreen.xib */,
 				9FB72DA31A5402CF00484A25 /* Supporting Files */,
+				9FB72DCF1A5628B900484A25 /* AddTaskViewController.h */,
+				9FB72DD01A5628B900484A25 /* AddTaskViewController.m */,
 			);
 			path = TaskTimer;
 			sourceTree = "<group>";
@@ -224,10 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB72DCE1A561BEE00484A25 /* Task.m in Sources */,
+				9FB72DD11A5628B900484A25 /* AddTaskViewController.m in Sources */,
 				9FB72DA91A5402CF00484A25 /* AppDelegate.m in Sources */,
 				9FB72DAC1A5402CF00484A25 /* MasterViewController.m in Sources */,
 				9FB72DA61A5402CF00484A25 /* main.m in Sources */,
 				9FB72DAF1A5402CF00484A25 /* DetailViewController.m in Sources */,
+				9FB72E091A57FACE00484A25 /* StopwatchTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +436,7 @@
 				9FB72DC81A5402CF00484A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FB72DC91A5402CF00484A25 /* Build configuration list for PBXNativeTarget "TaskTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				9FB72DCB1A5402CF00484A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
