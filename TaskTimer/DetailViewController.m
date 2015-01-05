@@ -17,20 +17,6 @@
 @end
 
 @implementation DetailViewController
-
-#pragma mark - Managing the detail item
-/*
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        
-            
-        // Update the view.
-        [self configureView];
-    }
-}
-*/
  
 - (void)configureView {
     // Update the user interface for the detail item.
@@ -38,16 +24,21 @@
     self.nameLabel.text = self.task.name;
     self.startDateLabel.text =  @" ";
     
-    //self.timerLabel.text = self.stopwatchTimer timeElapsedString
-    
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-        
-    }
+    NSLog(@"configure view");
+
+    //self.timerLabel.text = self.stopwatchTimer.timeElapsedString;
+
+    //self.detailDescriptionLabel.text = [self.detailItem description];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"view did load");
+    self.stopwatchTimer = [[StopwatchTimer alloc] init];
+    self.stopwatchTimer.delegate = self;
+    //self.timerLabel.text = self.stopwatchTimer.timeElapsedString;
+
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
@@ -55,8 +46,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    NSLog(@"view did appear");
     
-    //self.timerLabel.text = self.stopwatchTimer timeElapsedstring
+    //self.timerLabel.text = self.stopwatchTimer.timeElapsedString;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,16 +56,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)updateStopwatchTimerLabel
+{
+    self.timerLabel.text = self.stopwatchTimer.timeElapsedString;
+}
 
 - (IBAction)startButtonPressed:(id)sender
 {
     NSLog(@"start button pressed");
     if (sender == self.startButton)
     {
-        self.stopwatchTimer = [[StopwatchTimer alloc] init];
         [self.stopwatchTimer start];
         self.startDateLabel.text = [self.stopwatchTimer formattedDate];
+        self.timerLabel.text = self.stopwatchTimer.timeElapsedString;
+        
+        NSLog(@"****time elapsed string after start button pressed: %@", self.stopwatchTimer.timeElapsedString);
+        
     }
 }
 @end

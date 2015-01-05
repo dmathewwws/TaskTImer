@@ -7,8 +7,16 @@
 //
 
 #import "StopwatchTimer.h"
+@interface StopwatchTimer ()
+
+
+
+@end
 
 @implementation StopwatchTimer
+{
+    
+}
 
 - (NSString *)stringFromTimeInterval:(NSTimeInterval)interval {
     NSInteger ti = (NSInteger)interval;
@@ -18,7 +26,7 @@
     return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds];
 }
 
-- (void)updateTimer
+- (void)updateTimer:(NSTimer*)timer
 {
     NSDate *currentDate = [NSDate date];
     
@@ -26,13 +34,17 @@
     NSLog(@"timeInterval: %f",timeInterval);
     
     self.timeElapsedString = [self stringFromTimeInterval:timeInterval];
+    NSLog(@"%@", self.timeElapsedString);
+    
+    [self.delegate updateStopwatchTimerLabel];
 
 }
 - (void)start
 {
+   // if (!self.timer) {}  cehck if theres another timer running?
     NSLog(@"started timer");
     self.startDate = [NSDate date];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)pause
@@ -48,7 +60,7 @@
 - (NSString *)formattedDate
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM dd, yyyy HH:mm:ss"];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy HH:mm:ss"];
     NSDate *dateTest = [NSDate date];
     NSLog(@"%@", [dateFormatter stringFromDate:dateTest]);
     return [dateFormatter stringFromDate:self.startDate];

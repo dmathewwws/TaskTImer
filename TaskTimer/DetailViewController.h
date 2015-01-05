@@ -10,7 +10,7 @@
 #import "Task.h"
 #import "StopwatchTimer.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <StopwatchTimerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
@@ -18,7 +18,7 @@
 @property (nonatomic, strong) Task *task;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *startDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *timerLabel;
 @property (nonatomic, strong) StopwatchTimer *stopwatchTimer;
 
 

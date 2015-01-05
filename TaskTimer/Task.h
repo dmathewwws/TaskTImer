@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSDate *startDate;
-@property NSTimeInterval *timeSpent;
+@property NSTimeInterval timeSpent;
 
 - (id)initWithName:(NSString *)name onDate:(NSDate *)startDate;
 

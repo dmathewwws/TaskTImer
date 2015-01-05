@@ -104,11 +104,11 @@
 				9FB72E071A57FACE00484A25 /* StopwatchTimer.h */,
 				9FB72E081A57FACE00484A25 /* StopwatchTimer.m */,
 				9FB72DB01A5402CF00484A25 /* Main.storyboard */,
+				9FB72DCF1A5628B900484A25 /* AddTaskViewController.h */,
+				9FB72DD01A5628B900484A25 /* AddTaskViewController.m */,
 				9FB72DB31A5402CF00484A25 /* Images.xcassets */,
 				9FB72DB51A5402CF00484A25 /* LaunchScreen.xib */,
 				9FB72DA31A5402CF00484A25 /* Supporting Files */,
-				9FB72DCF1A5628B900484A25 /* AddTaskViewController.h */,
-				9FB72DD01A5628B900484A25 /* AddTaskViewController.m */,
 			);
 			path = TaskTimer;
 			sourceTree = "<group>";

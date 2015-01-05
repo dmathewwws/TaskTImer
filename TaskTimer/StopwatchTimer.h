@@ -8,18 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol StopwatchTimerDelegate <NSObject>
+
+- (void)updateStopwatchTimerLabel;
+
+@end
+
+
 @interface StopwatchTimer : NSObject
+{
+    
+}
 
-
+@property (nonatomic, weak) id <StopwatchTimerDelegate> delegate;
+@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSString *timeElapsedString;
-
 
 - (void)start;
 - (void)pause;
 - (void)reset;
 
-// helper method?
+// helper method
 - (NSString *)stringFromTimeInterval:(NSTimeInterval)interval;
 
 - (NSString *)formattedDate;
