@@ -74,4 +74,14 @@
         
     }
 }
+
+- (IBAction)pauseButtonPressed:(id)sender
+{
+    NSLog(@"pause button pressed");
+    if (sender == self.pauseButton)
+    {
+        [self.stopwatchTimer pause];
+        
+    }
+}
 @end

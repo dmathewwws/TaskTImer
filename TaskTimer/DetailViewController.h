@@ -23,6 +23,8 @@
 
 
 - (IBAction)startButtonPressed:(id)sender;
+- (IBAction)pauseButtonPressed:(id)sender;
+
 
 
 @end

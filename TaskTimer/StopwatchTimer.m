@@ -29,7 +29,7 @@
 - (void)updateTimer:(NSTimer*)timer
 {
     NSDate *currentDate = [NSDate date];
-    
+    // ::::this might not be necessray, try a counter instead?
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     NSLog(@"timeInterval: %f",timeInterval);
     
@@ -44,11 +44,27 @@
    // if (!self.timer) {}  cehck if theres another timer running?
     NSLog(@"started timer");
     self.startDate = [NSDate date];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)pause
 {
+    // get the current date, get the time elapsed and invalidate timer
+    if (self.timer)
+    {
+        NSLog(@"paused timer");
+        NSDate *pausedDate = [NSDate date];
+        [self.timer invalidate];
+        self.timer = nil;
+        NSLog(@"time elapsed string at pause after invalidating the timer: %@", self.timeElapsedString);
+        
+        
+        
+        
+    }
+
+    
+    
     
 }
 
